@@ -1,0 +1,12 @@
+resources:
+- name: flight-school
+  type: git
+  source:
+    uri: https://github.com/hkumarmk/flight-school
+    branch: master
+jobs:
+- name: test-app
+  plan:
+  - get: flight-school
+  - task: unit-test
+    file: flight-tool/build.yml
